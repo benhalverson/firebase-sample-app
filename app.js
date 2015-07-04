@@ -1,19 +1,18 @@
+'use strict';
 angular.module('scheduler', ['firebase'])
 .controller('MainCtrl', function($scope, $firebaseObject) {
 
-  // connect to firebase
-  var ref = new Firebase('https://myschedule-app.firebaseio.com/days');
-  var fb = $firebase(ref);
+  var myFirebaseRef = new Firebase('https://myschedule-app.firebaseio.com/days');
 
-  //sync as object
-  var syncObject = fb.$firebaseObject();
+  // sync as object
+  var syncObject = $firebaseObject();
 
   // three way data binding
   syncObject.$bindTo($scope, 'days');
-
+  // set defaults
   $scope.reset = function() {
-
-    fb.$set({
+    console.log('writing data to database');
+    myFirebaseRef.set({
       monday: {
         name: 'Monday',
         slots: {
@@ -21,7 +20,7 @@ angular.module('scheduler', ['firebase'])
             time: '9:00am',
             booked: false
           },
-          0110: {
+          110: {
             time: '11:00am',
             booked: false
           },
@@ -41,7 +40,7 @@ angular.module('scheduler', ['firebase'])
             time: '7:00pm',
             booked: false
           }
-    	  }
+        }
       },
       tuesday: {
         name: 'Tuesday',
@@ -59,7 +58,7 @@ angular.module('scheduler', ['firebase'])
             booked: false
           },
 
-          0110: {
+          110: {
             time: '11:00am',
             booked: false
           },
@@ -75,11 +74,11 @@ angular.module('scheduler', ['firebase'])
             time: '5:00pm',
             booked: false
           },
-          700: {
+          1700: {
             time: '7:00pm',
             booked: false
           }
-    	  }
+        }
       },
       wednesday: {
         name: 'Wednesday',
@@ -88,7 +87,7 @@ angular.module('scheduler', ['firebase'])
             time: '9:00am',
             booked: false
           },
-          0110: {
+          110: {
             time: '11:00am',
             booked: false
           },
@@ -121,7 +120,7 @@ angular.module('scheduler', ['firebase'])
             time: '9:00am',
             booked: false
           },
-          0110: {
+          110: {
             time: '11:00am',
             booked: false
           },
@@ -154,7 +153,7 @@ angular.module('scheduler', ['firebase'])
             time: '9:00am',
             booked: false
           },
-          0110: {
+          110: {
             time: '11:00am',
             booked: false
           },
@@ -182,9 +181,5 @@ angular.module('scheduler', ['firebase'])
       }
 
     });
-
   };
-
-
-
 });
