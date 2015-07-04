@@ -5,7 +5,7 @@ angular.module('scheduler', ['firebase'])
   var myFirebaseRef = new Firebase('https://myschedule-app.firebaseio.com/days');
 
   // sync as object
-  var syncObject = $firebaseObject();
+  var syncObject = $firebaseObject(myFirebaseRef);
 
   // three way data binding
   syncObject.$bindTo($scope, 'days');
