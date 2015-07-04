@@ -10,8 +10,8 @@ angular.module('scheduler', ['firebase'])
   // three way data binding
   syncObject.$bindTo($scope, 'days');
   // set defaults
-  $scope.reset = function() {
-    console.log('writing data to database');
+  $scope.reset = function(){
+
     myFirebaseRef.set({
       monday: {
         name: 'Monday',
