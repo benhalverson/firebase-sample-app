@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="scheduler">
+<head>
+  <meta charset="UTF-8">
+  <title>Scheduling App</title>
+  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body ng-controller="MainCtrl">
+  <div class="container" >
+    <div class="page-header text-center">
+      <h1>Schedule City</h1>
+    </div>
+  </div>
+
+  <div class="row times">
+    <div class="col-xs-4 text-center">
+      <h2>Monday</h2>
+
+      <div class="time-slot">
+        <input type="checkbox" id="monday-time">
+        <label for="monday-time">9:00am</label>
+      </div>
+
+    </div>
+
+      <p class="text-center">
+        <a href="#" class="btn btn-primary" ng-click="reset()">Reset</a>
+      </p>
+  </div>
+<script src="vendor/angular/angular.js"></script>
+<script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

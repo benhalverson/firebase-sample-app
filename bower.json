@@ -1,0 +1,22 @@
+{
+  "name": "schedulerApp",
+  "version": "0.0.0",
+  "authors": [
+    "Ben Halverson <benhalverson33@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.1",
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "firebase": "~2.2.7"
+  }
+}
